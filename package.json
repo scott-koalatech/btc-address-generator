@@ -1,0 +1,26 @@
+{
+  "name": "btc-address-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js",
+    "lint": "eslint ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bip32": "^3.1.0",
+    "bip39": "^3.0.4",
+    "bitcoinjs-lib": "^6.1.5",
+    "commander": "^11.1.0",
+    "lint": "^0.8.19",
+    "tiny-secp256k1": "^2.2.3",
+    "xlsx": "^0.18.5"
+  },
+  "type": "module",
+  "devDependencies": {
+    "eslint": "^8.53.0"
+  }
+}
