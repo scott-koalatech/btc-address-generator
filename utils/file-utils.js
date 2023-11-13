@@ -1,5 +1,6 @@
 import XLSX from 'xlsx';
 import fs from 'fs';
+import path from 'path';
 
 export function excelExport(data, path='.') {
 
@@ -18,8 +19,20 @@ export function excelExport(data, path='.') {
     // Add the worksheet to the workbook
     XLSX.utils.book_append_sheet(workbook, worksheet, 'UniSat-Taproot-Address');
     
+    // Get the current working directory
+    const currentWorkingDirectory = process.cwd();
+
+    // Specify the file name you want to save
+    const fileName = `${new Date().toDateString()}.xlsx`; // Change this to your desired file name
+
+
+    // Create the full file path by joining the current working directory and the file name
+    const filePath = `${currentWorkingDirectory}\\${fileName}`
+
+
+
     // Write the workbook to a file
-    XLSX.writeFile(workbook, `${path}/${new Date()}.xlsx`);
+    XLSX.writeFile(workbook, filePath);
     
     console.log('Excel file is written.');
 }
